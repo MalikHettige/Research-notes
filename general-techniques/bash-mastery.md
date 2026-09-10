@@ -55,7 +55,29 @@ Bash's real power for you specifically: gluing tools together.
 
 ## Notes
 
-This is a living reference — sections get filled in and refined as I work through them. Practical exercises and scripts go alongside these notes as I write them, not just a link collection.
+
+## Few hands-On Activities 
+
+1. **The One-Liner Recon Chain**
+   Using only `curl`, `grep`, and `sort`, hit `https://jsonplaceholder.typicode.com/users` and extract just the list of unique email domains (the part after `@`), sorted alphabetically — in a single piped command, no script file.
+
+2. **Break Your Own Quoting**
+   Create a variable containing a sentence with spaces, `$`, and a `*` in it. Try printing it four different ways: unquoted, single-quoted, double-quoted, and inside backticks. Predict the output before running each — then explain in your own words why each one behaved differently.
+
+3. **Silent Failure Hunt**
+   Write a 5-line script that deliberately does something wrong (e.g. reads a file that doesn't exist, or a command that fails) but *don't* use `set -e`. Watch it plow ahead silently. Then add `set -e` and `set -x` and watch the difference. Write down in one sentence why silent failures are dangerous in a recon script that's looping over 500 targets.
+
+4. **Rebuild the Wheel: A Mini `httpx`**
+   Given a text file of 10 URLs (mix real and fake ones), write a bash loop using `curl -s -o /dev/null -w "%{http_code}"` that checks each URL and prints only the ones returning `200`. No external tools — just `curl`, a `for` loop, and `if`.
+
+5. **The `jq` + `bash` Combo Test**
+   Fetch `https://jsonplaceholder.typicode.com/posts`, pipe it through `jq` to get only posts where `userId == 1`, extract just their `id` and `title`, then loop over each one in bash and `curl` its individual `/posts/{id}/comments` endpoint. This forces you to combine everything from your JSON course with bash looping.
+
+6. **Permissions From Scratch**
+   In your Linux VM (not Git Bash — this needs real permissions), create a script that only the owner can execute, and prove it fails for a different user. Then explain what `chmod 750` actually sets, digit by digit, without looking it up.
+
+7. **Find the Needle**
+   Given a directory of 50+ mixed files (some `.json`, some `.log`, some `.txt`), write one `find` + `grep` combo that finds every file modified in the last 7 days AND containing the word `token` — case-insensitive. No GUI search, no IDE — just the command line.
 
 ## Status
 
