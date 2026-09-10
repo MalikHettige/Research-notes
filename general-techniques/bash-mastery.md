@@ -7,6 +7,7 @@ A self-built path to real bash fluency — not just copy-pasting commands, but u
 Git Bash on Windows is a fine starting point but it's an emulation layer — it's missing real Unix internals (process management, cron, proper permissions, many core utils). Professional-level bash means being comfortable in an actual Linux environment. This course starts where you are (Git Bash) and deliberately pushes you toward a real Linux VM, because that's what real bug bounty / pentest / DevSecOps work runs on.
 
 ## Path
+> **Note:** Most of these activities (1–5, 7) run fine in Git Bash on Windows — they test bash syntax and piping, not the OS. Activity 6 requires a real Linux environment (VM or WSL2), since Git Bash doesn't enforce real Unix permissions.
 
 ### Phase 1 — Git Bash Basics (Windows)
 Get comfortable with the shell itself before worrying about "real" Linux.
