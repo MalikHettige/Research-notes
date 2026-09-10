@@ -13,6 +13,7 @@ Research-notes/
 ├── Template.md
 ├── access-control-idor/     ← concepts, techniques, cheat sheets for IDOR / broken access control
 ├── general-techniques/      ← cross-cutting skills not tied to one vuln class (e.g. nmap-fundamentals.md)
+│   └── json-fundamentals.md ← reading/parsing JSON, schema validation, JSONPath/jq querying — see json-for-bugbounty repo for the full course
 └── journal/                 ← raw, dated, unedited capture — the record before distillation
 ```
 
